@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crave & Co. | Food Ordering</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+  <a href="#home" class="logo">crave<span>&co.</span></a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#story">Our Story</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="cart-btn" onclick="showPage('cart')">
+    🛍 Cart <span id="cart-count">0</span>
+  </button>
+</header>
+
+<main>
+  <section id="home" class="page hero">
+    <div class="hero-text">
+      <p class="eyebrow">GOOD FOOD. GOOD MOOD.</p>
+      <h1>Made with love.<br>Served with <span>cravings.</span></h1>
+      <p class="intro">Your favourite flavours, freshly made and delivered to your door.</p>
+      <button class="primary-btn" onclick="showPage('menu')">
+        Explore Menu ↗
+      </button>
+      <p class="mini-note">✦ Fresh ingredients · Big flavours</p>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=85" alt="Freshly baked pizza">
+      <div class="floating-note">♡ Made fresh, just for you</div>
+    </div>
+  </section>
+
+  <section id="menu" class="page section">
+    <p class="eyebrow">A LITTLE SOMETHING FOR EVERYONE</p>
+    <h2>What are you craving?</h2>
+    <div class="search-row">
+      <input id="search" type="search" placeholder="Search your favourite food...">
+      <select id="sort" aria-label="Sort menu">
+        <option value="default">Recommended</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
+    </div>
+    <div id="categories" class="categories"></div>
+    <div id="food-grid" class="food-grid"></div>
+  </section>
+
+  <section id="story" class="page section story">
+    <p class="eyebrow">OUR LITTLE STORY</p>
+    <h2>Good food brings<br><span>people together.</span></h2>
+    <p>At Crave & Co., we believe every meal deserves a little happiness. From comfort-food classics to your favourite drinks, discover something delicious for every moment.</p>
+    <button class="primary-btn" onclick="showPage('menu')">Find Your Favourite ↗</button>
+  </section>
+
+  <section id="contact" class="page section contact">
+    <p class="eyebrow">WE'RE HERE FOR YOU</p>
+    <h2>Let's talk food.</h2>
+    <p>Questions about your order? We'd love to hear from you.</p>
+    <a class="primary-btn link-btn" href="mailto:hello@craveandco.example">Contact Us ✉</a>
+  </section>
+
+  <section id="cart" class="page section">
+    <p class="eyebrow">YOUR DELICIOUS PICKS</p>
+    <h2>Your shopping bag.</h2>
+    <div id="cart-items"></div>
+    <div class="total-row">
+      <span>Total</span><strong id="cart-total">₹0</strong>
+    </div>
+    <button class="primary-btn" onclick="showPage('checkout')">Continue to Checkout →</button>
+    <button class="secondary-btn" onclick="showPage('menu')">← Back to Menu</button>
+  </section>
+
+  <section id="checkout" class="page section checkout">
+    <p class="eyebrow">ALMOST THERE</p>
+    <h2>Delivery details.</h2>
+    <form id="checkout-form">
+      <label>Full name
+        <input name="name" required placeholder="Enter your name">
+      </label>
+      <label>Phone number
+        <input name="phone" type="tel" pattern="[0-9]{10}" required placeholder="10-digit mobile number">
+      </label>
+      <label>Delivery address
+        <textarea name="address" required placeholder="House, street, town"></textarea>
+      </label>
+      <label>Payment method
+        <select name="payment">
+          <option>Cash on Delivery</option>
+          <option>Pay on Delivery by UPI</option>
+        </select>
+      </label>
+      <p id="checkout-total"></p>
+      <button class="primary-btn" type="submit">Place My Order ♡</button>
+    </form>
+  </section>
+
+  <section id="success" class="page section success">
+    <div class="success-icon">✓</div>
+    <p class="eyebrow">ORDER CONFIRMED</p>
+    <h2>Something delicious<br>is on its way!</h2>
+    <p id="order-message"></p>
+    <button class="primary-btn" onclick="showPage('menu')">Order More Food ↗</button>
+  </section>
+</main>
+
+<footer>
+  <a href="#home" class="logo">crave<span>&co.</span></a>
+  <p>Made with ♡ for food lovers.</p>
+  <p>© 2026 Crave & Co.</p>
+</footer>
+
+</body>
+</html>
